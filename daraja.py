@@ -5,11 +5,11 @@ from selenium.webdriver.support.ui import Select
 import time
 
 # login details
-fName = "john"  # fName = input("what's your First name ")
-sName = "Mukundi"  # sName = input("what's your second name ")
-email = "johnmukundi@gmail.com"  # email = input("enter email number ")
-username = "jmukundi"  # username = input("prompt your preffered username ")
-phonenumber = 12344444  # phonenumber = input("enter your mobile number")
+fName = input("what's your First name ")  # fName = "john"
+sName = input("what's your second name ")  # sName = "Mukundi"
+email = input("enter email number ")  # email = "johnmukundi@gmail.com"
+username = input("prompt your preffered username ")  # username = "jmukundi"
+phonenumber = input("enter your mobile number")  # phonenumber = 12344444
 
 # website url and webdriver definition
 url = "https://developer.safaricom.co.ke/"
