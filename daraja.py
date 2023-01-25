@@ -1,13 +1,15 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
 import time
 
 # login details
-fName = input("what's your First name ")
-sName = input("what's your second name ")
-email = input("enter email number ")
-username = input("prompt your preffered username ")
+fName = "john"  # fName = input("what's your First name ")
+sName = "Mukundi"  # sName = input("what's your second name ")
+email = "johnmukundi@gmail.com"  # email = input("enter email number ")
+username = "jmukundi"  # username = input("prompt your preffered username ")
+phonenumber = 12344444  # phonenumber = input("enter your mobile number")
 
 # website url and webdriver definition
 url = "https://developer.safaricom.co.ke/"
@@ -48,3 +50,17 @@ Email = driver.find_element_by_xpath(
 usrname = driver.find_element_by_xpath("//input[contains(@name,'Username')]").send_keys(
     username
 )
+
+pnumber = driver.find_element_by_xpath(
+    "//input[contains(@name,'telephone')]"
+).send_keys(phonenumber)
+
+
+atype = driver.find_element_by_xpath(
+    '//*[@id="app"]/div[5]/div/div/div/form/div/div[6]/div/div/div[1]/div[2]/div[1]'
+)
+select = Select(atype)
+select.select_by_visible_text("Individual")
+
+
+# checkbox = driver.find_element_by_xpath('//*[@id="input-165"]').click()
