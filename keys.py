@@ -42,6 +42,16 @@ time.sleep(5)
 items = driver.find_elements_by_xpath(
     "//div[contains(@class,'col-sm-6 col-md-4 col-lg-3 col-xl-2 col-12')]"
 )
-print(len(items))
 
-driver.close()
+
+# last_createdItem
+recentItem = items[0]
+
+showKey = recentItem.find_element_by_xpath(
+    "//span[contains(@class,'mb-3 mt-1 v-chip v-chip--clickable v-chip--label v-chip--no-color v-chip--outlined theme--dark v-size--small')]"
+).click()
+
+keys = recentItem.find_element_by_xpath(
+    "//span[contains(@class,'text-truncate ellipsize-key ellipsize-keyAndSecret-Undo')]"
+).text
+print(keys)
