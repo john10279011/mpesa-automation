@@ -46,7 +46,7 @@ items = driver.find_elements_by_xpath(
 time.sleep(2)
 print(len(items))
 
-# last_createdItem
+# getting the keys from the newly created project
 recentItem = items[0]
 
 showKey = recentItem.find_element_by_xpath(

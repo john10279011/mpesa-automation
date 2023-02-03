@@ -48,3 +48,13 @@ print(len(items))
 
 
 # looping all items for the keys
+for item in items:
+    time.sleep(2)
+
+    item.find_element_by_xpath(
+        ".//span[contains(@class,'mb-3 mt-1 v-chip v-chip--clickable v-chip--label v-chip--no-color v-chip--outlined theme--dark v-size--small')]"
+    ).click()
+    key = item.find_element_by_xpath(
+        ".//span[contains(@class,'text-truncate ellipsize-key ellipsize-keyAndSecret-Undo')]"
+    ).text
+    print(key)
