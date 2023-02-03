@@ -38,7 +38,7 @@ driver.find_element_by_xpath(
     "//button[contains(@class,'v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--small primary')]"
 ).click()
 
-items = driver.find_elements_xpath(
+items = driver.find_elements_by_xpath(
     "//div[contains(@class,'v-card v-card--flat v-sheet theme--light')]"
 )
 print(len(items))
