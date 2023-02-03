@@ -38,20 +38,7 @@ driver.find_element_by_xpath(
     "//button[contains(@class,'v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--small primary')]"
 ).click()
 
-# creating a new project
-
-driver.find_element_by_xpath(
-    "//button[contains(@class,'mt-3 v-btn v-btn--outlined theme--light v-size--default primary--text')]"
-).click()
-wait
-
-driver.find_element_by_xpath("//input[contains(@name,'AppName')]").send_keys("amschel1")
-
-driver.find_element_by_xpath(
-    "(//div[contains(@class,'v-input--selection-controls__ripple')])[2]"
-).click()
-
-
-driver.find_element_by_xpath(
-    "//button[contains(@class,'mt-4 v-btn v-btn--block v-btn--is-elevated v-btn--has-bg theme--light v-size--small primary')]"
-).click()
+items = driver.find_elements_xpath(
+    "//div[contains(@class,'v-card v-card--flat v-sheet theme--light')]"
+)
+print(len(items))
