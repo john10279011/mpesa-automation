@@ -3,15 +3,18 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
 import time
 
-pas = input("Do you have a safaricom daraja a/c? (choose y/n)")
-if pas is "y":
+driver = webdriver.Chrome(ChromeDriverManager().install())
+url = "https://developer.safaricom.co.ke/"
+wait = driver.implicitly_wait(5)
 
+
+pas = input("Do you have a safaricom daraja a/c? (choose y/n)")
+
+
+if pas == "y":
+    # proceed to login
     username = input("enter your username details")
     password = input("enter your password")
-
-    driver = webdriver.Chrome(ChromeDriverManager().install())
-    url = "https://developer.safaricom.co.ke/"
-    wait = driver.implicitly_wait(5)
 
     driver.get(url)
 
@@ -62,5 +65,9 @@ if pas is "y":
     ).click()
 
 
-else:
+elif pas == "n":
+    # create acc
     pass
+
+else:
+    print("choose between y and n")
