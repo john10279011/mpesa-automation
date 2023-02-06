@@ -3,9 +3,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
 import time
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
+# driver = webdriver.Chrome(ChromeDriverManager().install())
 url = "https://developer.safaricom.co.ke/"
-wait = driver.implicitly_wait(5)
+# wait = driver.implicitly_wait(5)
 
 
 pas = input("Do you have a safaricom daraja a/c? (choose y/n)")
@@ -13,13 +13,16 @@ pas = input("Do you have a safaricom daraja a/c? (choose y/n)")
 
 if pas == "y":
     # proceed to login
-    username = input("enter your username details")
-    password = input("enter your password")
+    username = input("enter your username details ")
+    password = input("enter your password ")
+    project = input("Enter the name for creating a new project ")
+
+    driver = webdriver.Chrome(ChromeDriverManager().install())
+    wait = driver.implicitly_wait(5)
 
     driver.get(url)
-
-    time.sleep(1)
     # removing dialog-box
+    wait
     wait
     wait
 
@@ -46,14 +49,13 @@ if pas == "y":
     ).click()
 
     # creating a new project
-
     driver.find_element_by_xpath(
         "//button[contains(@class,'mt-3 v-btn v-btn--outlined theme--light v-size--default primary--text')]"
     ).click()
     wait
 
     driver.find_element_by_xpath("//input[contains(@name,'AppName')]").send_keys(
-        "amschel1"
+        project
     )
 
     driver.find_element_by_xpath(
